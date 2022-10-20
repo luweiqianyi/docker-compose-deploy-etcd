@@ -121,3 +121,47 @@ D:\etcd-v3.5.5-windows-amd64\etcd-practice>
 同时`Containers`下出现了`etcd-practice`,状态为：`Running`
 这说明在本地已经将项目etcd-practice构建到我们的Docker容器中了。
 本地浏览器访问：`http://127.0.0.1:8080/`是可以访问到我们之前在`docker-compose.yaml`文件配置的`evildecay/etcdkeeper`客户端的。
+
+## 上传本项目到远程新创建的仓库
+```
+Nicklaus@YINC MINGW64 /d/etcd-v3.5.5-windows-amd64/etcd-practice
+$ git init
+Initialized empty Git repository in D:/etcd-v3.5.5-windows-amd64/etcd-practice/.git/
+
+Nicklaus@YINC MINGW64 /d/etcd-v3.5.5-windows-amd64/etcd-practice (master)
+$ git add .
+
+Nicklaus@YINC MINGW64 /d/etcd-v3.5.5-windows-amd64/etcd-practice (master)
+$ git commit -m "Windows平台下，使用Docker Compose部署etc服务到Docker中"
+[master (root-commit) cf74cbe] Windows平台下，使用Docker Compose部署etc服务到Docker中
+ 5 files changed, 171 insertions(+)
+ create mode 100644 .env
+ create mode 100644 README.md
+ create mode 100644 docker-compose.yml
+ create mode 100644 etcd-manage/Dockerfile
+ create mode 100644 etcd/Dockerfile
+
+Nicklaus@YINC MINGW64 /d/etcd-v3.5.5-windows-amd64/etcd-practice (master)
+$ git remote add origin https://github.com/luweiqianyi/docker-compose-deploy-etcd.git
+
+Nicklaus@YINC MINGW64 /d/etcd-v3.5.5-windows-amd64/etcd-practice (master)
+$ git push -u origin master
+fatal: unable to access 'https://github.com/luweiqianyi/docker-compose-deploy-etcd.git/': OpenSSL SSL_read: Connection was reset, errno 10054
+
+Nicklaus@YINC MINGW64 /d/etcd-v3.5.5-windows-amd64/etcd-practice (master)
+$ git push -u origin master
+fatal: unable to access 'https://github.com/luweiqianyi/docker-compose-deploy-etcd.git/': OpenSSL SSL_read: Connection was reset, errno 10054
+
+Nicklaus@YINC MINGW64 /d/etcd-v3.5.5-windows-amd64/etcd-practice (master)
+$ git push -u origin master
+Enumerating objects: 9, done.
+Counting objects: 100% (9/9), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (7/7), done.
+Writing objects: 100% (9/9), 3.40 KiB | 580.00 KiB/s, done.
+Total 9 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/luweiqianyi/docker-compose-deploy-etcd.git
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+```
