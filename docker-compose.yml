@@ -1,0 +1,33 @@
+version: '3.5'
+# 网络配置
+networks:
+  backend:
+    driver: ${NETWORKS_DRIVER}
+
+# 服务容器配置
+services:
+  etcd:                                  # 自定义容器名称
+    build:
+      context: ./etcd                    # 指定构建使用的 Dockerfile 文件
+    environment:
+      - TZ=${TZ}
+      - ALLOW_NONE_AUTHENTICATION=yes
+      - ETCD_ADVERTISE_CLIENT_URLS=http://etcd:2379
+    ports:                              
+      - "${ETCD_PORT}:2379"          # 设置本地的端口ETCD_PORT映射到容器的2379端口
+    networks:
+      - backend
+    restart: always
+
+  etcd-manage:
+    build:
+      context: ./etcd-manage
+    environment:
+      - TZ=${TZ}
+    ports:
+      - "${ETCD_MANAGE_PORT}:8080"                    # 设置本地的端口ETCD_MANAGE_PORT映射到容器的8080端口
+    depends_on:                                       # 依赖容器
+      - etcd                                          # 在 etcd 服务容器启动后启动
+    networks:
+      - backend
+    restart: always
