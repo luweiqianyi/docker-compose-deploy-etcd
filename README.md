@@ -1,5 +1,5 @@
 # 项目搭建过程
-## 欢迎关注我的主页[YinChao's Blogs](https://luweiqianyi.github.io/)
+## 欢迎关注我的主页[Leebai's Blogs](https://luweiqianyi.github.io/)
 ## 前提条件：本地Windows主机下已经安装了Docker
 下载地址： 到[Docker主页](https://www.docker.com/)去找
 ## 创建项目
@@ -125,14 +125,14 @@ D:\etcd-v3.5.5-windows-amd64\etcd-practice>
 
 ## 上传本项目到远程新创建的仓库
 ```
-Nicklaus@YINC MINGW64 /d/etcd-v3.5.5-windows-amd64/etcd-practice
+Leebai@Nicklaus MINGW64 /d/etcd-v3.5.5-windows-amd64/etcd-practice
 $ git init
 Initialized empty Git repository in D:/etcd-v3.5.5-windows-amd64/etcd-practice/.git/
 
-Nicklaus@YINC MINGW64 /d/etcd-v3.5.5-windows-amd64/etcd-practice (master)
+Leebai@Nicklaus MINGW64 /d/etcd-v3.5.5-windows-amd64/etcd-practice (master)
 $ git add .
 
-Nicklaus@YINC MINGW64 /d/etcd-v3.5.5-windows-amd64/etcd-practice (master)
+Leebai@Nicklaus MINGW64 /d/etcd-v3.5.5-windows-amd64/etcd-practice (master)
 $ git commit -m "Windows平台下，使用Docker Compose部署etc服务到Docker中"
 [master (root-commit) cf74cbe] Windows平台下，使用Docker Compose部署etc服务到Docker中
  5 files changed, 171 insertions(+)
@@ -142,18 +142,18 @@ $ git commit -m "Windows平台下，使用Docker Compose部署etc服务到Docker
  create mode 100644 etcd-manage/Dockerfile
  create mode 100644 etcd/Dockerfile
 
-Nicklaus@YINC MINGW64 /d/etcd-v3.5.5-windows-amd64/etcd-practice (master)
+Leebai@Nicklaus MINGW64 /d/etcd-v3.5.5-windows-amd64/etcd-practice (master)
 $ git remote add origin https://github.com/luweiqianyi/docker-compose-deploy-etcd.git
 
-Nicklaus@YINC MINGW64 /d/etcd-v3.5.5-windows-amd64/etcd-practice (master)
+Leebai@Nicklaus MINGW64 /d/etcd-v3.5.5-windows-amd64/etcd-practice (master)
 $ git push -u origin master
 fatal: unable to access 'https://github.com/luweiqianyi/docker-compose-deploy-etcd.git/': OpenSSL SSL_read: Connection was reset, errno 10054
 
-Nicklaus@YINC MINGW64 /d/etcd-v3.5.5-windows-amd64/etcd-practice (master)
+Leebai@Nicklaus MINGW64 /d/etcd-v3.5.5-windows-amd64/etcd-practice (master)
 $ git push -u origin master
 fatal: unable to access 'https://github.com/luweiqianyi/docker-compose-deploy-etcd.git/': OpenSSL SSL_read: Connection was reset, errno 10054
 
-Nicklaus@YINC MINGW64 /d/etcd-v3.5.5-windows-amd64/etcd-practice (master)
+Leebai@Nicklaus MINGW64 /d/etcd-v3.5.5-windows-amd64/etcd-practice (master)
 $ git push -u origin master
 Enumerating objects: 9, done.
 Counting objects: 100% (9/9), done.
